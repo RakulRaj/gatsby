@@ -19,9 +19,8 @@ module.exports = {
       options: {
         apiURL: "http://localhost:1337",
         contentTypes: [
-          "Boardmembers",
-          "Articles",
-          "Newboardmembers"
+          "Newboardmembers",
+          "Visions",
         ],
         queryLimit: 1000,
       },

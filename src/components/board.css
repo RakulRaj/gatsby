@@ -64,6 +64,7 @@
   font-size: 1.14em;
   color: #9a9a9a;
   font-weight: 300;
+  text-align: justify;
 }
 .team-player .category {
   text-transform: uppercase;

@@ -62,7 +62,7 @@ class SubNavbar extends Component {
                   <div className="col-md-6 col-lg-6 col-sm-6">
                   <div className="row banners-area">
                   <div className="col-md-12 col-lg-12 col-sm-12">
-                    <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
+                    <img src="http://new.iowastaterid.org/images/2021_Q2_ISRID_Update_Preview.JPG" width="100%;" height="300px" />
                   </div>
 
                 </div>
@@ -93,7 +93,7 @@ class SubNavbar extends Component {
                   <div className="col-md-4 col-lg-4 col-sm-4">
                   <div className="row banners-area">
                   <div className="col-md-12 col-lg-12 col-sm-12">
-                    <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
+                    <img src="http://new.iowastaterid.org/images/2021_Q2_ISRID_Update_Preview.JPG" width="100%;"height="300px" />
                   </div>
                   </div>
                   </div>
@@ -117,7 +117,7 @@ class SubNavbar extends Component {
                   <div className="col-md-4 col-lg-4 col-sm-4">
                   <div className="row banners-area">
                   <div className="col-md-12 col-lg-12 col-sm-12">
-                    <img src="http://devitems.com/tf/teemo-preview/teemo/img/banner/banner-menu1.jpg" width="100%;" />
+                    <img src="http://new.iowastaterid.org/images/2021_Q2_ISRID_Update_Preview.JPG" width="100%;" height="300px"/>
                   </div>
                   </div>
                   </div>

@@ -33,7 +33,7 @@ class NavbarPage extends Component {
       <nav className="navigation">
         <img
           src={logo}
-          style={{ height: 60, listStyleType: 'none', float: 'left',marginTop: 10 }}
+          style={{ height: 77, listStyleType: 'none', float: 'left',marginTop: 10 }}
         />
         <ul className="menu" style={{ listStyleType: 'none', float: 'right',height: 80,paddingLeft: 40,fontWeight: 600 }}>
         <li className="menu__item">
