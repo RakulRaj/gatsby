@@ -15,7 +15,7 @@ const FeaturesPage = () => {
       allStrapiVisions {
         edges {
           node {
-            description
+            Description
           }
         }
       }
@@ -27,7 +27,7 @@ const FeaturesPage = () => {
       <h2 className="heading">Our Vision</h2>
     {data.allStrapiVisions.edges.map((document,index) => (
 
-      <p className="description half-size">{document.node.description}
+      <p className="description half-size">{document.node.Description}
        </p>
 
     ))}   </div>

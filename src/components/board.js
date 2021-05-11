@@ -3,7 +3,7 @@ import "./board.css";
 import member1 from "../images/boardMembers/President_boarstara.jpg";
 import member2 from "../images/boardMembers/boardheidi2.jpg";
 import { StaticQuery, graphql } from "gatsby"
-const baseUrl="http://localhost:1337"
+const baseUrl="http://54.165.124.135:1337"
 export default class Board extends React.Component {
 
     render() {
@@ -15,7 +15,6 @@ export default class Board extends React.Component {
             allStrapiNewboardmembers {
               edges {
                 node {
-                  Email
                   Description
                   Name
                   Role

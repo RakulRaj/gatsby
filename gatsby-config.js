@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: "http://localhost:1337",
+        apiURL: "http://54.165.124.135:1337",
         contentTypes: [
           "Newboardmembers",
           "Visions",
