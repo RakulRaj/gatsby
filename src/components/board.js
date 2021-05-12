@@ -3,7 +3,7 @@ import "./board.css";
 import member1 from "../images/boardMembers/President_boarstara.jpg";
 import member2 from "../images/boardMembers/boardheidi2.jpg";
 import { StaticQuery, graphql } from "gatsby"
-const baseUrl="http://54.165.124.135:1337"
+const baseUrl="https://strapy-iowa.herokuapp.com"
 export default class Board extends React.Component {
 
     render() {

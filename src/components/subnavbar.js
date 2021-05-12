@@ -127,9 +127,6 @@ class SubNavbar extends Component {
             <li className="top-level-link">
               <a><span>Calender</span></a>
             </li>
-            <li className="top-level-link">
-              <a><span>Logout</span></a>
-            </li>
           </ul>
         </nav>
       </header>

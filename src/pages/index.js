@@ -36,8 +36,6 @@ class App extends Component {
             rel="stylesheet"
             href="https://www.bluleadz.com/hs-fs/hub/57042/hub_generated/template_assets/29064077784/1598541453890/bz-bluleadz-2018/CSS/bz-2020-main.min.css"
           ></link>
-          <Carousel />
-          <Intro />
           <main>
             <AboutSection />
           </main>
