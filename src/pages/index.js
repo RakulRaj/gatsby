@@ -23,6 +23,7 @@ class App extends Component {
               `Material Design For Bootstrap`,
             ]}
           />
+
           <link
             href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700"
             rel="stylesheet"
