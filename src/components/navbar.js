@@ -36,11 +36,6 @@ class NavbarPage extends Component {
           style={{ height: 77, listStyleType: 'none', float: 'left',marginTop: 10 }}
         />
         <ul className="menu" style={{ listStyleType: 'none', float: 'right',height: 80,paddingLeft: 40,fontWeight: 600 }}>
-        <li className="menu__item">
-            <a href="#" className="menu__link">
-            About
-            </a>
-          </li>
           <li className="menu__item">
             <a href="#" className="menu__link">
             Sign in

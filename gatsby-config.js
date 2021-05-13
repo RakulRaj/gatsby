@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'MDB React Starter',
-    description: 'MDB React starter for material design landing page',
+    title: 'Gatsby',
+    description: '',
     siteUrl: 'https://gatsby-starter.mdbootstrap.com',
     author: 'anna-morawska',
   },
@@ -33,7 +33,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-material-design-for-bootstrap`,
-        short_name: `MDB starter`,
+        short_name: `gatsby`,
         start_url: `/`,
         background_color: `#4B5EB8`,
         theme_color: `#68008C`,
