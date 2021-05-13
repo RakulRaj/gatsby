@@ -24,6 +24,7 @@ const FeaturesPage = () => {
     render={data=>
 <div>
       <div className="box center">
+
       <h2 className="heading">Our Vision</h2>
     {data.allStrapiVisions.edges.map((document,index) => (
 
