@@ -19,7 +19,6 @@ export default class Board extends React.Component {
                 node {
                   title
                   role
-                  name
                   description
                   email
                   image {
@@ -39,7 +38,7 @@ export default class Board extends React.Component {
             <div className="col-md-4" key={index}>
             <div className="team-player">
               <img src={baseUrl+ `${document.node.image[0].url}`} alt="Thumbnail Image" className="rounded-circle img-fluid img-raised" />
-              <p className="category text-primary">{document.node.name}</p>
+              <p className="category text-primary">{document.node.title}</p>
               <p>{document.node.role}</p>
               <p className="description half-size">{`${document.node.description.substring(0, MAX_LENGTH)}...`}
               </p></div>
