@@ -3113,6 +3113,7 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
  }
   header.dark nav {
     background-color: #fff;
+    box-shadow: 0 3px 5px 0px #c1c1
  }
   header.light nav {
     background-color: rgba(0, 0, 0, 0.5);
@@ -4659,6 +4660,9 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
  }
   header.light ul.main-nav > li > a:after {
     background-color: #999;
+ }
+ .team-player{
+  box-shadow: 2px 12px 10px 7px #f1f1f1;
  }
 
 }

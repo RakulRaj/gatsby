@@ -18,9 +18,6 @@ class App extends Component {
             title="IOWA"
             keywords={[
               `gatsby`,
-              `MDBReact`,
-              `react`,
-              `Material Design For Bootstrap`,
             ]}
           />
 

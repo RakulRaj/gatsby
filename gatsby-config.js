@@ -19,8 +19,9 @@ module.exports = {
       options: {
         apiURL: "https://strapy-iowa.herokuapp.com",
         contentTypes: [
-          "Newboardmembers",
+          "Boardmembers",
           "Visions",
+          "Submenus",
         ],
         queryLimit: 1000,
       },

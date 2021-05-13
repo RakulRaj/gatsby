@@ -61,10 +61,11 @@
   border-style: none;
 }
 .team-player .description {
-  font-size: 1.14em;
+  font-size: 18px;
   color: #9a9a9a;
   font-weight: 300;
   text-align: justify;
+  padding: 20px;
 }
 .team-player .category {
   text-transform: uppercase;

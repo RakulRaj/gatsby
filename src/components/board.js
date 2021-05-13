@@ -8,18 +8,21 @@ const baseUrl="https://strapy-iowa.herokuapp.com"
 export default class Board extends React.Component {
 
     render() {
+      const MAX_LENGTH = 250;
 
         return (
           <StaticQuery
           query={graphql`
           {
-            allStrapiNewboardmembers {
+            allStrapiBoardmembers {
               edges {
                 node {
-                  Description
-                  Name
-                  Role
-                  Image {
+                  title
+                  role
+                  name
+                  description
+                  email
+                  image {
                     id
                     url
                   }
@@ -29,16 +32,16 @@ export default class Board extends React.Component {
           }
         `}
           render={data=> <div className="box center">
-          <h2 className="heading">Here is our team</h2>
+          <h2 className="heading">Board Members</h2>
           <div className="container">
             <div className="row">
-          {data.allStrapiNewboardmembers.edges.map((document,index) => (
-            <div className="col-md-4">
+          {data.allStrapiBoardmembers.edges.map((document,index) => (
+            <div className="col-md-4" key={index}>
             <div className="team-player">
-              <img src={baseUrl+ `${document.node.Image[0].url}`} alt="Thumbnail Image" className="rounded-circle img-fluid img-raised" />
-              <p className="category text-primary">{document.node.Name}</p>
-              <p>{document.node.Role}</p>
-              <p className="description half-size">{document.node.Description}
+              <img src={baseUrl+ `${document.node.image[0].url}`} alt="Thumbnail Image" className="rounded-circle img-fluid img-raised" />
+              <p className="category text-primary">{document.node.name}</p>
+              <p>{document.node.role}</p>
+              <p className="description half-size">{`${document.node.description.substring(0, MAX_LENGTH)}...`}
               </p></div>
               </div>
           ))}
