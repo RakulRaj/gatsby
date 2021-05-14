@@ -22,6 +22,7 @@ module.exports = {
           "Boardmembers",
           "Visions",
           "Submenus",
+          "Headers",
         ],
         queryLimit: 1000,
       },

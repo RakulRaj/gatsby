@@ -34,14 +34,23 @@ class SubNavbar extends Component {
       <StaticQuery
         query={graphql`
           {
-            allStrapiSubmenus {
+              allStrapiSubmenus {
+                edges {
+                  node {
+                    menulist {
+                      menuName
+                      id
+                      subMenu
+                    }
+                  }
+                }
+              }
+            allStrapiHeaders {
               edges {
                 node {
-                  menulist {
-                    menuName
-                    id
-                    subMenu
-                  }
+                  bgcolor2
+                  bgcolor1
+                  color
                 }
               }
             }
@@ -49,7 +58,9 @@ class SubNavbar extends Component {
         `}
         render={data => (
           <header className="dark">
-            <nav role="navigation">
+            <nav style={{
+            backgroundColor: data.allStrapiHeaders.edges[0].node.bgcolor2,
+          }}  role="navigation">
               <a className="ic menu" tabIndex={1}>
                 <span className="line" />
                 <span className="line" />
@@ -60,7 +71,9 @@ class SubNavbar extends Component {
                 {data.allStrapiSubmenus.edges[0].node.menulist.map(
                   (document, index1) => (
                     <li className="top-level-link" key={index1}>
-                      <a>
+                      <a style={{
+            color: data.allStrapiHeaders.edges[0].node.color,
+          }}>
                         <span>{document.menuName}</span>
                       </a>
                       <div className="sub-menu-block">
@@ -70,7 +83,9 @@ class SubNavbar extends Component {
                             <ul className="sub-menu-lists">
                               {document.subMenu.map((menu, index) => (
                                 <li key={index}>
-                                  <a>{menu}</a>
+                                  <a style={{
+            color: data.allStrapiHeaders.edges[0].node.color,
+          }}>{menu}</a>
                                 </li>
                               ))}
                             </ul>
