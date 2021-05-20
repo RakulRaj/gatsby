@@ -8,17 +8,17 @@ import { MDBRow } from 'mdbreact'
 import Board from "../components/board";
 import Board1 from "../components/board1";
 import Board2 from "../components/board2";
-import Page2 from "./page2";
+import HomePage from "../components/homecontent";
 class App extends Component {
   render() {
     return (
       <>
         <Layout>
           <SEO
-            title="IOWA"
-            keywords={[
-              `gatsby`,
-            ]}
+            title="ISRID"
+            // keywords={[
+            //   `ISRID`,
+            // ]}
           />
 
           <link
@@ -34,6 +34,7 @@ class App extends Component {
             href="https://www.bluleadz.com/hs-fs/hub/57042/hub_generated/template_assets/29064077784/1598541453890/bz-bluleadz-2018/CSS/bz-2020-main.min.css"
           ></link>
           <main>
+            <HomePage/>
             <AboutSection />
           </main>
         </Layout>

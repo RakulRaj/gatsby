@@ -6,9 +6,11 @@ import Footer from './footer'
 import "./layout.css"
 import SubNavbar from './subnavbar'
 import Board from './board'
+import TopNavbar from './topbar'
 
 const Layout = ({ children }) => (
      <>
+     <TopNavbar/>
         <Navbar />
         <SubNavbar/>
           {children}

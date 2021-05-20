@@ -18,48 +18,65 @@ import { Link } from 'gatsby'
 import CustomNavLink from './customLink'
 import './subnavbar.css'
 import logo from '../images/Logo_Image.ico'
-import { StaticQuery, graphql } from 'gatsby'
-
-class SubNavbar extends Component {
-  state = {
-    isOpen: false,
+import { useStaticQuery, graphql } from 'gatsby'
+const query = graphql`
+  {
+    allStrapiSubnavbars {
+      nodes {
+        font_color {
+          color
+          id
+        }
+        title
+        bg_color {
+          color
+          id
+        }
+        name {
+          font_stack
+          id
+        }
+        bg_sub_menu {
+          color
+          id
+        }
+        font_family {
+          family
+          id
+        }
+        font_size {
+          size
+          id
+        }
+        sub_menu_color {
+          color
+          id
+        }
+      }
+    }
   }
-
-  toggleCollapse = () => {
-    this.setState({ isOpen: !this.state.isOpen })
-  }
-
-  render() {
-    return (
-      <StaticQuery
-        query={graphql`
-          {
-              allStrapiSubmenus {
-                edges {
-                  node {
-                    menulist {
-                      menuName
-                      id
-                      subMenu
-                    }
-                  }
-                }
-              }
-            allStrapiHeaders {
-              edges {
-                node {
-                  bgcolor2
-                  bgcolor1
-                  color
-                }
-              }
-            }
-          }
-        `}
-        render={data => (
-          <header className="dark">
+`
+const SubNavbar = () => {
+  const data = useStaticQuery(query)
+  const {
+    allStrapiSubnavbars: { nodes: subnavbar },
+  } = data
+  console.log(data)
+  const {
+    bg_color,
+    font_color,
+    font_family,
+    sub_menu_color,
+    bg_sub_menu,
+    font_size,
+    message,
+    title,
+    font_stack
+  } = subnavbar[0]
+  return (
+    <header className="dark">
             <nav style={{
-            backgroundColor: data.allStrapiHeaders.edges[0].node.bgcolor2,
+            backgroundColor: bg_color.color,
           }}  role="navigation">
               <a className="ic menu" tabIndex={1}>
                 <span className="line" />
@@ -68,24 +85,26 @@ class SubNavbar extends Component {
               </a>
               <a className="ic close" />
               <ul className="main-nav">
-                {data.allStrapiSubmenus.edges[0].node.menulist.map(
+                {subnavbar.map(
                   (document, index1) => (
                     <li className="top-level-link" key={index1}>
                       <a style={{
-            color: data.allStrapiHeaders.edges[0].node.color,
+            color: font_color.color,
           }}>
-                        <span>{document.menuName}</span>
+                        <span>{document.title}</span>
                       </a>
-                      <div className="sub-menu-block">
+                      <div className="sub-menu-block" style={{
+            backgroundColor: bg_sub_menu.color,
+          }}>
                         <div className="row">
                           <div className="col-md-4 col-lg-4 col-sm-4">
                             <h2 className="sub-menu-head"></h2>
                             <ul className="sub-menu-lists">
-                              {document.subMenu.map((menu, index) => (
+                              {document.name.map((menu, index) => (
                                 <li key={index}>
                                   <a style={{
-            color: data.allStrapiHeaders.edges[0].node.color,
-          }}>{menu}</a>
+            color: sub_menu_color.color,
+          }}>{menu.font_stack}</a>
                                 </li>
                               ))}
                             </ul>
@@ -110,10 +129,8 @@ class SubNavbar extends Component {
               </ul>
             </nav>
           </header>
-        )}
-      ></StaticQuery>
-    )
-  }
+  )
 }
+
 
 export default SubNavbar

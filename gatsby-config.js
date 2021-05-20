@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby',
+    title: 'IOWA STATE REGISTRY OF INTERPRETERS FOR THE DEAF',
     description: '',
-    siteUrl: 'https://gatsby-starter.mdbootstrap.com',
+   // siteUrl: 'https://gatsby-starter.mdbootstrap.com',
     author: 'anna-morawska',
   },
   plugins: [
@@ -19,10 +19,13 @@ module.exports = {
       options: {
         apiURL: "https://strapy-iowa.herokuapp.com",
         contentTypes: [
-          "Boardmembers",
+          "Logins",
           "Visions",
-          "Submenus",
-          "Headers",
+          "Navbars",
+          "Subnavbars",
+          "Homes",
+          "Members",
+          "Footers",
         ],
         queryLimit: 1000,
       },
@@ -39,7 +42,7 @@ module.exports = {
         background_color: `#4B5EB8`,
         theme_color: `#68008C`,
         display: `standalone`,
-        icon: `${__dirname}/src/images/mdb-react-small.png`, // This path is relative to the root of the site.
+        icon: `${__dirname}/src/images/Logo_Image.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

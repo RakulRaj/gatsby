@@ -1,0 +1,15 @@
+.homeContent{
+  border: 1px solid #3869ff;
+  height: 391px;
+}
+
+.homeContent ul{
+list-style: none;
+text-align: justify
+}
+
+.content i{
+  font-size: 16px;
+  margin-right: 10px;
+  color: blue;
+}

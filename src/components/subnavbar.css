@@ -3103,7 +3103,7 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
     color: #000;
  }
   header.dark {
-    margin-top: 95px;
+    margin-top: 204px;
  }
   header.light {
     background-color: #fff;
@@ -3133,7 +3133,6 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
     display: block;
     padding: 6px 30px;
     position: relative;
-    color: #3f454a !important;
     font-size: 16px;
     font-weight: bold;
     box-sizing: border-box;
