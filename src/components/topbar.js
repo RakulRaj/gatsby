@@ -16,84 +16,67 @@ import {
 } from 'mdbreact'
 import { Link } from 'gatsby'
 import CustomNavLink from './customLink'
-import './navbar.css'
+import './subnavbar.css'
 import logo from '../images/Logo_Image.ico'
-import { graphql, useStaticQuery } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 const query = graphql`
-  {
-    allStrapiLogins(sort: { order: DESC, fields: id }) {
-      nodes {
-        message
-        title
-        font_color {
+{
+  allStrapiLogins {
+    nodes {
+      id
+      height
+      login_content {
+        width
+        login_content
+        bg_color {
           color
           id
         }
+        float
         font_family {
           family
+          id
+        }
+        font_color {
+          color
           id
         }
         font_size {
           size
           id
         }
-        bg_color {
-          id
-          color
-        }
       }
     }
   }
+}
 `
-
-  const TopNavbarPage = () => {
+const TopNavbarPage = () => {
   const data = useStaticQuery(query)
   const {
     allStrapiLogins: { nodes: login },
   } = data
   console.log(data)
   const {
-    bg_color,
-    font_color,
-    font_family,
-    font_size,
-    message,
-    title,
+    height
   } = login[0]
   return (
-      <nav
-        className="navigation"
-        style={{
-          backgroundColor: bg_color.color, height:40,
-        }}
-      >
-        <div className="row">
-          <div className="col-md-9">
-            <a
-              style={{
-                color: font_color.color,
-                fontFamily: font_family.family,
-                fontSize: font_size.size,
-              }}
-            >
-              {message}
-            </a>
-          </div>
-          <div className="col-md-3">
-            <a
-              style={{
-                color: font_color.color,
-                fontFamily: font_family.family,
-                fontSize: font_size.size,
+            <nav >
+              <ul className="top-nav">
+                {login[0].login_content.map(
+                  (item, index1) => (
+                    <li className="top-level-link" key={index1} style={{width:item.width,backgroundColor:item.bg_color.color,height: height || "30px"}}>
+                      <span style={{color:item.font_color.color,fontSize:item.font_size.size,fontFamily:item.font_family.family
+          }}>
+                 {item.login_content}</span>
 
-              }}
-            >
-              {title}
-            </a>
-          </div>
-        </div>
-       </nav>
+                    </li>
+                  )
+                )}
+              </ul>
+            </nav>
+
   )
 }
+
 
 export default TopNavbarPage

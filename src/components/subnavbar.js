@@ -21,22 +21,17 @@ import logo from '../images/Logo_Image.ico'
 import { useStaticQuery, graphql } from 'gatsby'
 const query = graphql`
   {
-    allStrapiSubnavbars {
+    allStrapiSubnavbars(sort: {order: ASC, fields: menu_name}) {
       nodes {
-        font_color {
-          color
-          id
-        }
-        title
         bg_color {
           color
           id
         }
-        name {
-          font_stack
+        bg_sub_menu {
+          color
           id
         }
-        bg_sub_menu {
+        font_color {
           color
           id
         }
@@ -48,14 +43,31 @@ const query = graphql`
           size
           id
         }
-        sub_menu_color {
-          color
+        menu_name
+        menu_url
+        title
+        submenu_name {
           id
+          font_color {
+            color
+            id
+          }
+          font_family {
+            family
+            id
+          }
+          font_size {
+            size
+            id
+          }
+          menu_name
+          url
         }
       }
     }
   }
 `
+
 const SubNavbar = () => {
   const data = useStaticQuery(query)
   const {
@@ -91,20 +103,23 @@ const SubNavbar = () => {
                       <a style={{
             color: font_color.color,
           }}>
-                        <span>{document.title}</span>
+            <Link to={`/${document.menu_url}`}>
+                        <span>{document.menu_name}</span>
+                        </Link>
                       </a>
                       <div className="sub-menu-block" style={{
             backgroundColor: bg_sub_menu.color,
           }}>
+            {document.submenu_name  && (
                         <div className="row">
                           <div className="col-md-4 col-lg-4 col-sm-4">
                             <h2 className="sub-menu-head"></h2>
                             <ul className="sub-menu-lists">
-                              {document.name.map((menu, index) => (
+                              {document.submenu_name.map((menu, index) => (
                                 <li key={index}>
                                   <a style={{
-            color: sub_menu_color.color,
-          }}>{menu.font_stack}</a>
+            color: font_color.color,
+          }}>{menu.menu_name}</a>
                                 </li>
                               ))}
                             </ul>
@@ -122,6 +137,7 @@ const SubNavbar = () => {
                             </div>
                           </div>
                         </div>
+                        )}
                       </div>
                     </li>
                   )

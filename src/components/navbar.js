@@ -47,13 +47,15 @@ const NavbarPage = () => {
       <nav
         className="navigation"
         style={{
-          backgroundColor: bg_color.color, marginTop:40,
+          backgroundColor: bg_color.color,
         }}
       >
+        <Link to="/">
     <img
           src={logo}
-          style={{ height: 143, listStyleType: 'none', float: 'left',marginTop: 10 }}
+          style={{ height: 143, listStyleType: 'none', float: 'left',marginTop: 10, width:"50%" }}
         />
+        </Link>
        </nav>
   )
 }

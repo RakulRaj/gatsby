@@ -4,6 +4,7 @@ import "./board.css";
 import member1 from "../images/boardMembers/President_boarstara.jpg";
 import member2 from "../images/boardMembers/boardheidi2.jpg";
 import {
+  MDBBtn,
   MDBIcon,
 } from 'mdbreact'
 import { useStaticQuery, graphql } from "gatsby"
@@ -62,6 +63,7 @@ const HomeContent = () => {
                     {desc.description}
                   </li>
                 ))}
+                {/* <MDBBtn type="button" className="read-more">read more</MDBBtn> */}
                 </ul>
               </div>
               </div>

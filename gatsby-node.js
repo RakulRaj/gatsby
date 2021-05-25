@@ -1,7 +1,25 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require("path")
 
-// You can delete this file if you're not using it
+// create pages dynamically
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const result = await graphql(`
+    {
+      members: allStrapiMembers {
+        nodes {
+          slug
+        }
+      }
+    }
+  `)
+
+  result.data.members.nodes.forEach(members => {
+    createPage({
+      path: `/board/${members.slug}`,
+      component: path.resolve(`src/templates/board-members-template.js`),
+      context: {
+        slug: members.slug,
+      },
+    })
+  })
+}

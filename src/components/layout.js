@@ -5,7 +5,7 @@ import Navbar from './navbar'
 import Footer from './footer'
 import "./layout.css"
 import SubNavbar from './subnavbar'
-import Board from './board'
+import Board from './Board'
 import TopNavbar from './topbar'
 
 const Layout = ({ children }) => (
@@ -14,7 +14,6 @@ const Layout = ({ children }) => (
         <Navbar />
         <SubNavbar/>
           {children}
-          <Board/>
         <Footer />
       </>
 )

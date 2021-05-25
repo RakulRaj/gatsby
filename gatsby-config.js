@@ -4,6 +4,7 @@ module.exports = {
     description: '',
    // siteUrl: 'https://gatsby-starter.mdbootstrap.com',
     author: 'anna-morawska',
+
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

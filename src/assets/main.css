@@ -1,5 +1,5 @@
 .homeContent{
-  border: 1px solid #3869ff;
+  box-shadow: 2px 12px 10px 7px #f1f1f1;
   height: 391px;
 }
 
@@ -12,4 +12,22 @@ text-align: justify
   font-size: 16px;
   margin-right: 10px;
   color: blue;
+}
+.read-more{
+  float: right;
+  padding: 9px 12px 8px 10px;
+  background: #468202 !important;
+}
+.top-nav li{
+  display: inline-block;
+  margin-right: 0px;
+  padding: 3px;
+}
+
+.top-nav{
+  padding: 0px;
+  margin: 0px;
+}
+.category{
+  margin-top: 13px;
 }
