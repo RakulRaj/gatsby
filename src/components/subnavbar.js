@@ -100,13 +100,15 @@ const SubNavbar = () => {
                 {subnavbar.map(
                   (document, index1) => (
                     <li className="top-level-link" key={index1}>
-                      <a style={{
+
+            <Link to={`/${document.menu_url}`}>
+            <a style={{
             color: font_color.color,
           }}>
-            <Link to={`/${document.menu_url}`}>
                         <span>{document.menu_name}</span>
-                        </Link>
+
                       </a>
+                      </Link>
                       <div className="sub-menu-block" style={{
             backgroundColor: bg_sub_menu.color,
           }}>
