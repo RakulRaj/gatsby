@@ -21,7 +21,7 @@ const Board = ({
 
 export const query = graphql`
 {
-  allStrapiMembers {
+  allStrapiMembers(sort: {fields: order, order: ASC}) {
     nodes {
       role
       name
@@ -32,6 +32,7 @@ export const query = graphql`
       slug
       email
       description
+      order
     }
   }
 }

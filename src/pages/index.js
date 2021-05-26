@@ -30,19 +30,20 @@ export default ({ data }) => {
   )
 }
 export const query = graphql`
-  {
-    allStrapiMembers {
-      nodes {
-        role
-        name
-        image {
-          url
-          id
-        }
-        slug
-        email
-        description
+{
+  allStrapiMembers(sort: {fields: order, order: ASC}) {
+    nodes {
+      role
+      name
+      image {
+        url
+        id
       }
+      slug
+      email
+      description
+      order
     }
   }
+}
 `
