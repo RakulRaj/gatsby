@@ -22,17 +22,23 @@ const Board = ({
 export const query = graphql`
 {
   allStrapiMembers {
-    nodes {
-      role
-      name
-      image {
-        url
-        id
+     nodes {
+  id
+  board_member {
+    description
+    email
+    id
+    role
+    name
+    image {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
       }
-      slug
-      email
-      description
     }
+  }
+}
   }
 }
 `

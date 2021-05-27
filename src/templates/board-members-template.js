@@ -2,10 +2,13 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Image from "gatsby-image"
 const baseUrl="https://strapy-iowa.herokuapp.com"
 
 const ComponentName = ({ data }) => {
-  const { role, name,image,slug,email,description } = data.blog
+  const { role, name,image,slug,email,description } = data.blog.board_member[0]
+  console.log("data.blog.board_member",data.blog.board_member)
+
 
   return (
     <Layout>
@@ -17,7 +20,7 @@ const ComponentName = ({ data }) => {
 
               <div className="col-md-12">
               <div className="team-player">
-                <img src={baseUrl+ `${image[0].url}`} alt={image[0].url} className="img-fluid img-raised" />
+              <Image fluid={image.childImageSharp.fluid} className="img-fluid img-raised" style={{ width: "50%",height:"50%", marginLeft: 275}}/>
                 <p className="category text-primary">{name}</p>
                 <p>{role}</p>
                 <p>{email}</p>
@@ -32,17 +35,21 @@ const ComponentName = ({ data }) => {
 }
 
 export const query = graphql`
-  query GetSingleBlog($slug: String) {
-    blog: strapiMembers(slug: { eq: $slug }) {
-      role
-      name
-      image {
-        url
+  query GetSingleBlog($name: String) {
+    blog: strapiMembers(board_member: {elemMatch: {name: {eq: $name}}}) {
+      board_member {
+        name
+        description
         id
+        email
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
-      slug
-      email
-      description
     }
   }
 `

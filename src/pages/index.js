@@ -30,19 +30,25 @@ export default ({ data }) => {
   )
 }
 export const query = graphql`
-  {
-    allStrapiMembers {
-      nodes {
+{
+  allStrapiMembers {
+    nodes {
+      id
+      board_member {
+        description
+        email
+        id
         role
         name
         image {
-          url
-          id
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
-        slug
-        email
-        description
       }
     }
   }
+}
 `

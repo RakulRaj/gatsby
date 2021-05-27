@@ -19,6 +19,8 @@ import CustomNavLink from './customLink'
 import './subnavbar.css'
 import logo from '../images/Logo_Image.ico'
 import { useStaticQuery, graphql } from 'gatsby'
+import * as lodash from 'lodash'
+
 const query = graphql`
 {
   allStrapiLogins {
@@ -28,6 +30,7 @@ const query = graphql`
       login_content {
         width
         login_content
+        order
         bg_color {
           color
           id
@@ -55,14 +58,17 @@ const TopNavbarPage = () => {
   const {
     allStrapiLogins: { nodes: login },
   } = data
-  console.log(data)
+  console.log("loginDaa",data)
+  const loginData=login[0].login_content
+  const LoginDatas=lodash.orderBy(loginData, ['order'],['asc'])
+
   const {
     height
   } = login[0]
   return (
             <nav >
               <ul className="top-nav">
-                {login[0].login_content.map(
+                {LoginDatas.map(
                   (item, index1) => (
                     <li className="top-level-link" key={index1} style={{width:item.width,backgroundColor:item.bg_color.color,height: height || "30px"}}>
                       <span style={{color:item.font_color.color,fontSize:item.font_size.size,fontFamily:item.font_family.family

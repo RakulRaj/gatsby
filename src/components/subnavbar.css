@@ -3117,7 +3117,7 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
     list-style-type: none;
     padding: 0px;
     font-size: 0px;
-    max-width: 1000px;
+    max-width: initial;
     margin: 0 auto;
  }
   ul.main-nav > li {

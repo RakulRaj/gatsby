@@ -88,3 +88,8 @@
 .image-category{
   width: 150px !important;
 }
+.team-player .img-fluid{
+  height: 213px;
+  width: 211px;
+  margin-left: 80px;
+}

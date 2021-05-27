@@ -53,7 +53,7 @@ const NavbarPage = () => {
         <Link to="/">
     <img
           src={logo}
-          style={{ height: 143, listStyleType: 'none', float: 'left',marginTop: 10, width:"50%" }}
+          style={{ height: 143, listStyleType: 'none', float: 'left',marginTop: 10, width:"30%" }}
         />
         </Link>
        </nav>
