@@ -40,6 +40,7 @@ export const query = graphql`
         id
         role
         name
+        order
         image {
           childImageSharp {
             fluid {
