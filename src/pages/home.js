@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import Boards from "../components/Boards"
 import SEO from "../components/seo"
+import Image from "gatsby-image"
 
 const Board = ({
   data: {

@@ -9,6 +9,8 @@ import Boards from "../components/Boards";
 import Board1 from "../components/board1";
 import Board2 from "../components/board2";
 import HomePage from "../components/homecontent";
+import { graphql } from "gatsby"
+
 
 export default ({ data }) => {
   const {

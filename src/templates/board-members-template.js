@@ -33,9 +33,7 @@ const ComponentName = ({ data }) => {
     </Layout>
   )
 }
-const test=name
-debugger
-console.log("tttr",test)
+
 export const query = graphql`
   query GetSingleBlog($name: String) {
     blog: strapiMembers(board_member: {elemMatch: {name: {eq: $name}}}) {
