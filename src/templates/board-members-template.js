@@ -6,8 +6,8 @@ import Image from "gatsby-image"
 const baseUrl="https://strapy-iowa.herokuapp.com"
 
 const ComponentName = ({ data }) => {
-  const { role, name,image,slug,email,description } = data.blog.board_member[0]
-  console.log("data.blog.board_member",data.blog.board_member)
+  debugger;
+  const { role, name,image,slug,email,description } = data.blog.board_member[0];
 
 
   return (
@@ -33,7 +33,9 @@ const ComponentName = ({ data }) => {
     </Layout>
   )
 }
-
+const test=name
+debugger
+console.log("tttr",test)
 export const query = graphql`
   query GetSingleBlog($name: String) {
     blog: strapiMembers(board_member: {elemMatch: {name: {eq: $name}}}) {
