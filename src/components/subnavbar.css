@@ -1459,6 +1459,7 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
   .ic.menu {
     top: 131px;
     z-index: 20;
+    margin-right: 40px;
  }
   .ic.menu .line {
     height: 4px;

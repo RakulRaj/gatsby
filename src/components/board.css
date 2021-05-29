@@ -91,5 +91,6 @@
 .team-player .img-fluid{
   height: 213px;
   width: 211px;
-  margin-left: 80px;
+  margin-left: auto;
+  margin-right: auto;
 }

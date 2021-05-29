@@ -17,7 +17,7 @@ export const BoardMembers = ({members,title,showLink})=>{
             <h2 className="heading">Board Members</h2>
             <div className="container">
               <div className="row">
-            {members[0].board_member.map((member,index) => {
+            {members.map((member,index) => {
             return <Board key={index} {...member}/>
             }
             )}

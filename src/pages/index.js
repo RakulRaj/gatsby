@@ -13,6 +13,7 @@ import { graphql } from "gatsby"
 
 
 export default ({ data }) => {
+  debugger
   const {
     allStrapiMembers: { nodes: members },
   } = data
@@ -33,21 +34,19 @@ export default ({ data }) => {
 }
 export const query = graphql`
 {
-  allStrapiMembers {
+  allStrapiMembers(sort: {fields: order, order: ASC}) {
     nodes {
+      name
+      order
+      role
+      slug
+      email
+      description
       id
-      board_member {
-        description
-        email
-        id
-        role
-        name
-        order
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+      image {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
           }
         }
       }

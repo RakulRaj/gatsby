@@ -7,9 +7,7 @@ exports.createPages = async ({ graphql, actions }) => {
     {
       members: allStrapiMembers {
         nodes {
-          board_member{
-            name
-          }
+         slug
         }
       }
     }
@@ -18,10 +16,10 @@ exports.createPages = async ({ graphql, actions }) => {
   result.data.members.nodes.forEach(members => {
     debugger
     createPage({
-      path: `/board/${members.board_member[0].name}`,
+      path: `/board/${members.slug}`,
       component: path.resolve(`src/templates/board-members-template.js`),
       context: {
-        slug: members.board_member[0].name,
+        slug: members.slug,
 
       },
     })

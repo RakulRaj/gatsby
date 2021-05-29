@@ -23,8 +23,6 @@ export const query = graphql`
 {
   allStrapiMembers {
      nodes {
-  id
-  board_member {
     description
     email
     id
@@ -37,7 +35,6 @@ export const query = graphql`
         }
       }
     }
-  }
 }
   }
 }

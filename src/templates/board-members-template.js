@@ -7,7 +7,8 @@ const baseUrl="https://strapy-iowa.herokuapp.com"
 
 const ComponentName = ({ data }) => {
   debugger;
-  const { role, name,image,slug,email,description } = data.blog.board_member[0];
+  console.log("boardData",data)
+  const { role, name,image,slug,email,description } = data.blog;
 
 
   return (
@@ -20,7 +21,7 @@ const ComponentName = ({ data }) => {
 
               <div className="col-md-12">
               <div className="team-player">
-              <Image fluid={image.childImageSharp.fluid} className="img-fluid img-raised" style={{ width: "50%",height:"50%", marginLeft: 275}}/>
+              <Image fluid={image.childImageSharp.fluid} className="img-fluid img-raised" style={{ width: "50%",height:"50%"}}/>
                 <p className="category text-primary">{name}</p>
                 <p>{role}</p>
                 <p>{email}</p>
@@ -35,21 +36,22 @@ const ComponentName = ({ data }) => {
 }
 
 export const query = graphql`
-  query GetSingleBlog($name: String) {
-    blog: strapiMembers(board_member: {elemMatch: {name: {eq: $name}}}) {
-      board_member {
-        name
-        description
-        id
-        email
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+
+  query GetSingleBlog($slug: String) {
+    blog: strapiMembers(slug: { eq: $slug }) {
+      image {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
           }
         }
       }
+      description
+      email
+      id
+      role
+      slug
+      name
     }
   }
 `

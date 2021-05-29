@@ -22,16 +22,15 @@ const Board = ({
 
 export const query = graphql`
 {
-   allStrapiMembers {
-  nodes {
-    id
-    board_member {
-      description
-      email
-      id
-      role
+  allStrapiMembers(sort: {fields: order, order: ASC}) {
+    nodes {
       name
       order
+      role
+      slug
+      email
+      description
+      id
       image {
         childImageSharp {
           fluid {
@@ -41,7 +40,6 @@ export const query = graphql`
       }
     }
   }
-}
 }
 `
 export default Board
