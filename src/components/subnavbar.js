@@ -21,7 +21,7 @@ import logo from '../images/Logo_Image.ico'
 import { useStaticQuery, graphql } from 'gatsby'
 const query = graphql`
   {
-    allStrapiSubnavbars(sort: {order: ASC, fields: menu_name}) {
+    allStrapiSubnavbars(sort: {order: ASC, fields: order}) {
       nodes {
         bg_color {
           color
