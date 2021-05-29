@@ -13,7 +13,7 @@ const ComponentName = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={name} description={role} />
+      <SEO title={slug} description={role} />
 
           <div className="box center">
             <div className="container">

@@ -14,7 +14,7 @@ const BoardMember = ({ id, role, name, image, description, slug, email }) => {
         return (
 
               <div className="col-md-4">
-                 <Link  to={`/board/${name}`} key={id}>
+                 <Link  to={`/board/${slug}`} key={id}>
               <div className="team-player">
                 <Image fluid={image.childImageSharp.fluid} className="img-fluid img-raised" />
                 <p className="category text-primary">{name}</p>

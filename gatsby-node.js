@@ -7,12 +7,12 @@ exports.createPages = async ({ graphql, actions }) => {
     {
       members: allStrapiMembers {
         nodes {
-         slug
+          slug
         }
       }
     }
   `)
-
+debugger
   result.data.members.nodes.forEach(members => {
     debugger
     createPage({

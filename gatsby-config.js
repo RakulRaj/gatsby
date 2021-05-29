@@ -27,6 +27,7 @@ module.exports = {
           "Homes",
           "Members",
           "Footers",
+          "Boards",
         ],
         queryLimit: 1000,
       },
