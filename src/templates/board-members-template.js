@@ -21,7 +21,9 @@ const ComponentName = ({ data }) => {
 
               <div className="col-md-12">
               <div className="team-player">
+                {image &&
               <Image fluid={image.childImageSharp.fluid} className="img-fluid img-raised" style={{ width: "50%",height:"50%"}}/>
+                }
                 <p className="category text-primary">{name}</p>
                 <p>{role}</p>
                 <p>{email}</p>

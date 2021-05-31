@@ -16,9 +16,10 @@ const BoardMember = ({ id, role, name, image, description, slug, email }) => {
               <div className="col-md-4">
                  <Link  to={`/board/${slug}`} key={id}>
               <div className="team-player">
-                <Image fluid={image.childImageSharp.fluid} className="img-fluid img-raised" />
+              {image &&  <Image fluid={image.childImageSharp.fluid} className="img-fluid img-raised" />}
                 <p className="category text-primary">{name}</p>
                 <p>{role}</p>
+                <p>{email}</p>
                 <p className="description half-size">{`${description.substring(0, MAX_LENGTH)}...`}
                 </p></div>
                 </Link>

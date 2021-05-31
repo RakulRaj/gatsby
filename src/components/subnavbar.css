@@ -45,8 +45,8 @@ ul.main-nav {
   padding: 0px;
   font-size: 0px;
   max-width: 1000px;
-  margin: 0 auto;
-  left: 80px;
+  margin: 0 !important;
+
 }
 ul.main-nav > li {
   display: inline-block;
@@ -1281,7 +1281,6 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
     list-style-type: none;
     padding: 0px;
     font-size: 0px;
-    max-width: 1000px;
     margin: 0 auto;
  }
   ul.main-nav > li {
@@ -1400,7 +1399,6 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
     list-style-type: none;
     padding: 0px;
     font-size: 0px;
-    max-width: 1000px;
     margin: 0 auto;
  }
   ul.main-nav > li {
@@ -1542,7 +1540,6 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
     list-style-type: none;
     padding: 0px;
     font-size: 0px;
-    max-width: 1000px;
     margin: 0 auto;
  }
   ul.main-nav ul.main-nav > li {
@@ -2468,7 +2465,6 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
     list-style-type: none;
     padding: 0px;
     font-size: 0px;
-    max-width: 1000px;
     margin: 0 auto;
  }
   ul.main-nav > li {
@@ -2588,7 +2584,6 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
     list-style-type: none;
     padding: 0px;
     font-size: 0px;
-    max-width: 1000px;
     margin: 0 auto;
  }
   ul.main-nav > li {
@@ -2736,7 +2731,6 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
     list-style-type: none;
     padding: 0px;
     font-size: 0px;
-    max-width: 1000px;
     margin: 0 auto;
  }
   ul.main-nav > li > div.sub-menu-block ul.main-nav > li {
@@ -2876,7 +2870,6 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
     list-style-type: none;
     padding: 0px;
     font-size: 0px;
-    max-width: 1000px;
     margin: 0 auto;
  }
   ul.main-nav > li {
@@ -2989,7 +2982,6 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
     list-style-type: none;
     padding: 0px;
     font-size: 0px;
-    max-width: 1000px;
     margin: 0 auto;
  }
   ul.main-nav > li {
@@ -3118,7 +3110,6 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
     list-style-type: none;
     padding: 0px;
     font-size: 0px;
-    max-width: initial;
     margin: 0 auto;
  }
   ul.main-nav > li {

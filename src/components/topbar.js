@@ -70,7 +70,7 @@ const TopNavbarPage = () => {
               <ul className="top-nav">
                 {LoginDatas.map(
                   (item, index1) => (
-                    <li className="top-level-link" key={index1} style={{width:item.width,backgroundColor:item.bg_color.color,height: height || "30px"}}>
+                    <li className="top-level-link" key={index1} style={{width:item.width,backgroundColor:item.bg_color.color,textAlign:item.float,height: height || "30px"}}>
                       <span style={{color:item.font_color.color,fontSize:item.font_size.size,fontFamily:item.font_family.family
           }}>
                  {item.login_content}</span>

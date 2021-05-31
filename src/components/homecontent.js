@@ -10,52 +10,44 @@ import {
 import { useStaticQuery, graphql } from "gatsby"
 
 const query = graphql`
-  {
-    allStrapiHomes(filter: {isEnabled: {eq: true}}) {
-      nodes {
-        font_family {
-          family
-          id
-        }
-        description {
-          description
-          id
-        }
-        border_color {
-          color
-          id
-        }
-        font_size {
-          size
-          id
-        }
+{
+  allStrapiEvents {
+    nodes {
+      title
+      id
+      description {
+        description
         id
-        title
-        font_color {
-          color
-          id
+      }
+      slug
+      updated_at
+      created_at(formatString: "MM Do, YYYY")
+      image {
+        childImageSharp {
+          fluid {
+            src
+          }
         }
-        isEnabled
       }
     }
   }
+}
 `
 
 
 const HomeContent = () => {
   const data = useStaticQuery(query);
-  const {allStrapiHomes:{nodes:homes},}=data;
+  const {allStrapiEvents:{nodes:events},}=data;
         return (
+
 
           <div className="box center">
             <div className="container">
               <div className="row ">
-              {homes.map((item,index) => (
+              {events.map((item,index) => (
                 <div className="col-md-6" key={item.id}>
                 <div className="homeContent">
-                <h4  style={{
-          color: item.font_color.color
-        }}>{item.title}</h4>
+                <h4>{item.title}</h4>
                 <ul >
                 {item.description.map((desc,index)=>(
                   <li className="content" key={desc.id}>

@@ -1,20 +1,20 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import Boards from "../components/Boards"
+import Events from "../components/Events"
 import SEO from "../components/seo"
 import Image from "gatsby-image"
 
 const Board = ({
   data: {
-    allStrapiMembers: { nodes: members },
+    allStrapiEvents: { nodes: events },
   },
 }) => {
   return (
     <Layout>
-      <SEO title="Board Member" />
+      <SEO title="Events" />
       <section className="blog-page">
-        <Boards members={members} title="" />
+        <Events events={events} title="Recent Update" />
       </section>
     </Layout>
   )
@@ -22,19 +22,21 @@ const Board = ({
 
 export const query = graphql`
 {
-  allStrapiMembers(sort: {fields: order, order: ASC}) {
+  allStrapiEvents(sort: {fields: created_at, order: DESC}, limit: 3) {
     nodes {
-      name
-      order
-      role
-      slug
-      email
-      description
+      title
       id
+      description {
+        description
+        id
+      }
+      slug
+      updated_at
+      created_at(formatString: "MM Do, YYYY")
       image {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            src
           }
         }
       }

@@ -9,6 +9,7 @@ import Boards from "../components/Boards";
 import Board1 from "../components/board1";
 import Board2 from "../components/board2";
 import HomePage from "../components/homecontent";
+import Events from "../components/Events"
 import { graphql } from "gatsby"
 
 
@@ -17,6 +18,10 @@ export default ({ data }) => {
   const {
     allStrapiMembers: { nodes: members },
   } = data
+  const {
+    allStrapiEvents: { nodes: events },
+  } = data
+
 
   return (
     <Layout>
@@ -27,7 +32,8 @@ export default ({ data }) => {
             // ]}
           />
           <main>
-            <Boards members={members} titile="Board Members" showLink/>
+
+            <Events events={events} title="Recent Update" showLink/>
           </main>
         </Layout>
   )
@@ -43,6 +49,35 @@ export const query = graphql`
       email
       description
       id
+      image {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  }
+  allStrapiEvents(sort: {fields: created_at, order: DESC}, limit: 3) {
+    nodes {
+      title
+      id
+      description {
+        description
+        id
+      }
+      font_family {
+        id
+        family
+      }
+      font_color {
+        color
+        id
+      }
+      slug
+      updated_at
+      title_align
+      created_at(formatString: "MM Do, YYYY")
       image {
         childImageSharp {
           fluid {

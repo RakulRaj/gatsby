@@ -11,7 +11,6 @@ text-align: justify
 .content i{
   font-size: 16px;
   margin-right: 10px;
-  color: blue;
 }
 .read-more{
   float: right;
@@ -31,7 +30,15 @@ text-align: justify
 .category{
   margin-top: 13px;
 }
-
+.ListStyle{
+  list-style: none;
+}
+.ListStyle li{
+  color:gray
+}
+.ListStyle li i{
+  margin-right: 10px;
+}
 @media only screen and (max-width: 768px) {
 .top-nav{
   display: inline-flex;

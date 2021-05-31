@@ -101,7 +101,7 @@ const SubNavbar = () => {
                   (document, index1) => (
                     <li className="top-level-link" key={index1}>
 
-            <Link to={`/${document.menu_url}`}>
+<Link to={`/${document.menu_url}`}>
             <a style={{
             color: font_color.color,
           }}>

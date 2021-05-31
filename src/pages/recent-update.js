@@ -1,19 +1,19 @@
 import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import HomeContent from "../components/homecontent"
+import Events from "../components/Events"
 import SEO from "../components/seo"
 
 const Board = ({
   data: {
-    allStrapiHomes: { nodes: homes },
+    allStrapiEvents: { nodes: events },
   },
 }) => {
   return (
     <Layout>
       <SEO title="Board Member" />
       <section className="blog-page">
-        <HomeContent homes={homes} title="" />
+        <Events events={events} title="Recent Update" />
       </section>
     </Layout>
   )
@@ -21,31 +21,25 @@ const Board = ({
 
 export const query = graphql`
 {
-  allStrapiHomes {
+  allStrapiEvents {
     nodes {
-      font_family {
-        family
-        id
-      }
+      title
+      title_align
+      id
       description {
         description
         id
       }
-      border_color {
-        color
-        id
+      slug
+      updated_at
+      created_at(formatString: "MM Do, YYYY")
+      image {
+        childImageSharp {
+          fluid {
+            src
+          }
+        }
       }
-      font_size {
-        size
-        id
-      }
-      id
-      title
-      font_color {
-        color
-        id
-      }
-      isEnabled
     }
   }
 }

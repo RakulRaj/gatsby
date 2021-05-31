@@ -24,4 +24,28 @@ debugger
       },
     })
   })
+
+  const resultData = await graphql(`
+  {
+    members: allStrapiEvents {
+      nodes {
+        slug
+      }
+    }
+  }
+`)
+debugger
+resultData.data.members.nodes.forEach(members => {
+  debugger
+  createPage({
+    path: `/board/${members.slug}`,
+    component: path.resolve(`src/templates/event-template.js`),
+    context: {
+      slug: members.slug,
+
+    },
+  })
+})
+
 }
+

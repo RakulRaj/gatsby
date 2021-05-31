@@ -28,6 +28,7 @@ export const query = graphql`
     id
     role
     name
+    slug
     image {
       childImageSharp {
         fluid {
