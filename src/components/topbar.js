@@ -1,19 +1,5 @@
 import React, { Component } from 'react'
-import {
-  MDBContainer,
-  MDBNavbar,
-  MDBNavbarNav,
-  MDBNavItem,
-  MDBNavLink,
-  MDBNavbarToggler,
-  MDBCollapse,
-  MDBFormInline,
-  MDBDropdown,
-  MDBDropdownToggle,
-  MDBDropdownMenu,
-  MDBDropdownItem,
-  MDBIcon,
-} from 'mdbreact'
+
 import { Link } from 'gatsby'
 import CustomNavLink from './customLink'
 import './subnavbar.css'
@@ -48,6 +34,10 @@ const query = graphql`
           size
           id
         }
+        font_weight {
+          weight
+          id
+        }
       }
     }
   }
@@ -71,7 +61,7 @@ const TopNavbarPage = () => {
                 {LoginDatas.map(
                   (item, index1) => (
                     <li className="top-level-link" key={index1} style={{width:item.width,backgroundColor:item.bg_color.color,textAlign:item.float,height: height || "30px"}}>
-                      <span style={{color:item.font_color.color,fontSize:item.font_size.size,fontFamily:item.font_family.family
+                      <span style={{color:item.font_color.color,fontSize:item.font_size.size,fontFamily:item.font_family.family,fontWeight:item.font_weight.weight
           }}>
                  {item.login_content}</span>
 

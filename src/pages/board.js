@@ -11,7 +11,7 @@ const Board = ({
 }) => {
   return (
     <Layout>
-      <SEO title="Board Member" />
+      <SEO title="Board" />
       <section className="blog-page">
         <Boards members={members} title="" />
       </section>

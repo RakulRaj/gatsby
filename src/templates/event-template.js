@@ -17,17 +17,22 @@ const ComponentName = ({ data }) => {
     <Layout>
       <SEO title={slug} />
 
-      <div className="col-md-12">
-        <Link to={`/board/${slug}`} key={id}>
 
-          <div className="team-player">
-          <h3 style={{textAlign:title_align}}> {title}</h3>
-            {image && (
+
+      <div className="box center">
+            <div className="container">
+              <div className="row">
+
+              <div className="col-md-12">
+              <div className="team-player">
+              <h3 style={{textAlign:title_align}}> {title}</h3>
+                {image &&
               <Image
-                fluid={image.childImageSharp.fluid}
-                className="img-fluid img-raised"
-              />
-            )}
+              fluid={image.childImageSharp.fluid}
+              className="img-fluid img-raised"
+            />
+
+                }
 
 <ul className="ListStyle">
               {description.map((desc, index) => (
@@ -38,9 +43,12 @@ const ComponentName = ({ data }) => {
                 </li>
               ))}
             </ul>
-          </div>
-        </Link>
-      </div>
+              </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
     </Layout>
   )
 }

@@ -12,7 +12,7 @@ const Board = ({
 }) => {
   return (
     <Layout>
-      <SEO title="Events" />
+      <SEO title="Home" />
       <section className="blog-page">
         <Events events={events} title="Recent Update" />
       </section>
@@ -36,7 +36,7 @@ export const query = graphql`
       image {
         childImageSharp {
           fluid {
-            src
+            ...GatsbyImageSharpFluid
           }
         }
       }

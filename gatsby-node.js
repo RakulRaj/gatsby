@@ -27,7 +27,7 @@ debugger
 
   const resultData = await graphql(`
   {
-    members: allStrapiEvents {
+    events: allStrapiEvents {
       nodes {
         slug
       }
@@ -35,13 +35,13 @@ debugger
   }
 `)
 debugger
-resultData.data.members.nodes.forEach(members => {
+resultData.data.events.nodes.forEach(event => {
   debugger
   createPage({
-    path: `/board/${members.slug}`,
+    path: `/board/${event.slug}`,
     component: path.resolve(`src/templates/event-template.js`),
     context: {
-      slug: members.slug,
+      slug: event.slug,
 
     },
   })

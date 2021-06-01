@@ -34,10 +34,18 @@ text-align: justify
   list-style: none;
 }
 .ListStyle li{
-  color:gray
+  color:gray;
+  margin-bottom: 10px;
 }
 .ListStyle li i{
   margin-right: 10px;
+}
+.img-fluid{
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+.team-player{
+  padding: 11px;
 }
 @media only screen and (max-width: 768px) {
 .top-nav{

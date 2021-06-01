@@ -3356,6 +3356,7 @@ ul.main-nav > li ul.sub-menu-lists > li > a {
   ul.main-nav {
     display: block;
     position: relative;
+    max-width: 1703px;
  }
   .sub-menu-block {
     padding: 15px;
