@@ -10,7 +10,7 @@ const baseUrl="https://strapy-iowa.herokuapp.com"
 
 const BoardMember = ({ id, role, name, image, description, slug, email }) => {
   debugger
-  const MAX_LENGTH = 250;
+  const MAX_LENGTH = 200;
         return (
 
               <div className="col-md-4">
@@ -19,7 +19,6 @@ const BoardMember = ({ id, role, name, image, description, slug, email }) => {
               {image &&  <Image fluid={image.childImageSharp.fluid} className="img-fluid img-raised" />}
                 <p className="category text-primary">{name}</p>
                 <p>{role}</p>
-                <p>{email}</p>
                 <p className="description half-size">{`${description.substring(0, MAX_LENGTH)}...`}
                 </p></div>
                 </Link>

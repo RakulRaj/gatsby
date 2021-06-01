@@ -21,7 +21,7 @@ const Board = ({
 
 export const query = graphql`
 {
-  allStrapiMembers {
+  allStrapiMembers(sort: {fields: order, order: ASC}) {
      nodes {
     description
     email
