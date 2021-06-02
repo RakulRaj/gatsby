@@ -36,6 +36,7 @@ text-align: justify
 .ListStyle li{
   color:gray;
   margin-bottom: 10px;
+  text-align: left;
 }
 .ListStyle li i{
   margin-right: 10px;
@@ -50,5 +51,6 @@ text-align: justify
 @media only screen and (max-width: 768px) {
 .top-nav{
   display: inline-flex;
+  width: 100%;
 }
 }

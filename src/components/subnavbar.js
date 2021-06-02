@@ -140,7 +140,7 @@ const SubNavbar = () => {
                       </ul>
                     </div>
 
-                    <div className="col-md-4 col-lg-4 col-sm-4">
+                    {/* <div className="col-md-4 col-lg-4 col-sm-4">
                       <div className="row banners-area">
                         <div className="col-md-12 col-lg-12 col-sm-12">
                           <img
@@ -150,7 +150,7 @@ const SubNavbar = () => {
                           />
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 )}
               </div>
