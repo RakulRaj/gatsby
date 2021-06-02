@@ -62,6 +62,7 @@ export const query = graphql`
     nodes {
       title
       id
+      content_align
       description {
         description
         id

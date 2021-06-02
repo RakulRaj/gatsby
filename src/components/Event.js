@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 import Image from 'gatsby-image'
 import { MDBBtn, MDBIcon } from 'mdbreact'
 
-const Event = ({ id, description, image, slug, font_family,font_color,title ,title_align}) => {
+const Event = ({ id, description, image, slug, font_family,font_color,title ,title_align,content_align}) => {
   debugger
   const MAX_LENGTH = 250
   return (
@@ -24,9 +24,9 @@ const Event = ({ id, description, image, slug, font_family,font_color,title ,tit
 
             <ul className="ListStyle">
               {description.map((desc, index) => (
-                <li
+                <li style={{listStyle:content_align}}
                key={desc.id}>
-                  <MDBIcon icon="angle-double-right" size="lg" />
+
                   {desc.description}
                 </li>
               ))}

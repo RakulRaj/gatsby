@@ -30,9 +30,7 @@ text-align: justify
 .category{
   margin-top: 13px;
 }
-.ListStyle{
-  list-style: none;
-}
+
 .ListStyle li{
   color:gray;
   margin-bottom: 10px;
