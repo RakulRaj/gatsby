@@ -58,11 +58,12 @@ export const query = graphql`
       }
     }
   }
-  allStrapiEvents(sort: {fields: created_at, order: DESC}, limit: 3) {
+  allStrapiEvents(sort: {order: ASC, fields: order}, limit: 3) {
     nodes {
       title
       id
       content_align
+      order
       description {
         description
         id

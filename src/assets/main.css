@@ -46,9 +46,20 @@ text-align: justify
 .team-player{
   padding: 11px;
 }
+.logo-img {
+  height: 143px;
+  list-style: 'none';
+ float: 'left';
+}
+
 @media only screen and (max-width: 768px) {
 .top-nav{
   display: inline-flex;
   width: 100%;
 }
+}
+@media screen and (max-width: 480px) {
+  .logo-img {
+    width: 230px !important;
+  }
 }

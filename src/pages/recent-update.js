@@ -21,7 +21,7 @@ const Board = ({
 
 export const query = graphql`
 {
-  allStrapiEvents {
+  allStrapiEvents(sort: {order: ASC, fields: order}) {
     nodes {
       title
       title_align

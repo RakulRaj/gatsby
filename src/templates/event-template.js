@@ -9,7 +9,7 @@ import { MDBBtn, MDBIcon } from 'mdbreact'
 const ComponentName = ({ data }) => {
   debugger;
   console.log("boardData",data)
-  const { id,description, image, slug, font_family,font_color,title ,title_align } = data.blog;
+  const { id,description, image, slug, font_family,font_color,title ,title_align,content_align } = data.blog;
   debugger
 
 
@@ -25,7 +25,7 @@ const ComponentName = ({ data }) => {
 
               <div className="col-md-12">
               <div className="team-player">
-              <h3 style={{textAlign:title_align}}> {title}</h3>
+              <h3 style={{textAlign:title_align,color:font_color.color}}> {title}</h3>
                 {image &&
               <Image
               fluid={image.childImageSharp.fluid}
@@ -36,9 +36,8 @@ const ComponentName = ({ data }) => {
 
 <ul className="ListStyle">
               {description.map((desc, index) => (
-                <li
+                <li style={{listStyle:content_align}}
                key={desc.id}>
-                  <MDBIcon icon="angle-double-right" size="lg" />
                   {desc.description}
                 </li>
               ))}
@@ -59,6 +58,7 @@ export const query = graphql`
     blog: strapiEvents(slug: { eq: $slug }) {
       title
       id
+      content_align
       description {
         description
         id
