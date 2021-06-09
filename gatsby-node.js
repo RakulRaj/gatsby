@@ -1,3 +1,5 @@
+const axios = require("axios")
+
 const path = require("path")
 
 // create pages dynamically
@@ -12,7 +14,6 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-debugger
   result.data.members.nodes.forEach(members => {
     debugger
     createPage({
@@ -34,7 +35,6 @@ debugger
     }
   }
 `)
-debugger
 resultData.data.events.nodes.forEach(event => {
   debugger
   createPage({
@@ -46,6 +46,5 @@ resultData.data.events.nodes.forEach(event => {
     },
   })
 })
-
 }
 

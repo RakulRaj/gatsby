@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-       // apiURL: ""
-        apiURL: "https://strapy-iowa.herokuapp.com",
+       apiURL: "https://54.156.73.182",
+       // apiURL: "https://strapy-iowa.herokuapp.com",
         contentTypes: [
           "Logins",
           "Visions",

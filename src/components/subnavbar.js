@@ -45,7 +45,6 @@ const query = graphql`
         }
         menu_name
         menu_url
-        title
         submenu_name {
           id
           font_color {
@@ -82,7 +81,6 @@ const SubNavbar = () => {
     bg_sub_menu,
     font_size,
     message,
-    title,
     font_stack,
   } = subnavbar[0]
   return (
