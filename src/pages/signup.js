@@ -1,6 +1,7 @@
 import React from 'react'
-import CryptoJs from 'crypto-js';
-import { Link, Redirect } from 'react-router-dom';
+import CryptoJs from 'crypto-js'
+import { Redirect } from 'react-router-dom'
+import { Link } from 'gatsby'
 
 const axios = require('axios')
 /* https://linguinecode.com/post/how-to-get-form-data-on-submit-in-reactjs */
@@ -24,27 +25,21 @@ const Signup = () => {
     e.preventDefault()
     console.log({ formData })
     debugger
-    const pwd = CryptoJs.MD5(formData.password).toString();
+    const pwd = CryptoJs.MD5(formData.password).toString()
     const data = {
       username: formData.username,
       email: formData.email,
       confirmed: true,
       password: pwd,
     }
-debugger
+    debugger
     return new Promise((resolve, reject) => {
       debugger
       axios
-        .post(
-          'http://localhost:1337/users',
-           data
-        )
+        .post('https://54.156.73.182/users', data)
         .then(result => {
-          if (result.statusText==="Created") {
-            localStorage.token = result.data.jwt;
-            localStorage.isAuthenticated = true;
-            <Redirect to="/login"/>;
-          }
+          console.log(result)
+          window.location.pathname = '/login'
           /**
            * creates a dynamic page with the data received
            * injects the data into the context object alongside with some options
@@ -65,13 +60,13 @@ debugger
     <>
       <div className="card">
         <form>
-          <h2 className="title"> Log in</h2>
-          <p className="subtitle">
+          <h2 className="title"> Sign Up</h2>
+          {/* <p className="subtitle">
             Don't have an account? <a href="#"> sign Up</a>
-          </p>
-          <p className="or">
+          </p> */}
+          {/* <p className="or">
             <span>or</span>
-          </p>
+          </p> */}
           <div className="email-login">
             <label htmlFor="email">
               {' '}
@@ -84,7 +79,7 @@ debugger
               required
               onChange={handleChange}
             />
-             <label htmlFor="email">
+            <label htmlFor="email">
               {' '}
               <b>Email</b>
             </label>
@@ -107,7 +102,7 @@ debugger
             />
           </div>
           <button className="cta-btn" onClick={sendData}>
-            Log In
+            SignUp
           </button>
           <a className="forget-pass" href="#">
             Forgot password?

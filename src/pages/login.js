@@ -1,5 +1,6 @@
 import React from 'react'
-import CryptoJs from 'crypto-js';
+import CryptoJs from 'crypto-js'
+import { Link } from 'gatsby'
 
 const axios = require('axios')
 /* https://linguinecode.com/post/how-to-get-form-data-on-submit-in-reactjs */
@@ -22,7 +23,7 @@ const Login = () => {
     e.preventDefault()
     console.log({ formData })
     debugger
-    const pwd = CryptoJs.MD5(formData.password).toString();
+    const pwd = CryptoJs.MD5(formData.password).toString()
     const data = {
       identifier: formData.username,
       password: pwd,
@@ -31,12 +32,12 @@ const Login = () => {
     return new Promise((resolve, reject) => {
       debugger
       axios
-        .post(
-          'http://localhost:1337/auth/local',
-          data
-        )
+        .post('https://54.156.73.182/auth/local', data)
         .then(result => {
           const { data } = result
+          window.location.pathname = '/'
+          localStorage.token = result.data.jwt
+          localStorage.isAuthenticated = true
           console.log({ result })
           /**
            * creates a dynamic page with the data received
@@ -60,7 +61,10 @@ const Login = () => {
         <form>
           <h2 className="title"> Log in</h2>
           <p className="subtitle">
-            Don't have an account? <a href="#"> sign Up</a>
+            Don't have an account?
+            <Link to={`/signup`}>
+              <a href="#"> sign Up</a>
+            </Link>
           </p>
           <p className="or">
             <span>or</span>

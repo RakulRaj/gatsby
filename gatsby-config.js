@@ -2,9 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'IOWA STATE REGISTRY OF INTERPRETERS FOR THE DEAF',
     description: '',
-   // siteUrl: 'https://gatsby-starter.mdbootstrap.com',
+    // siteUrl: 'https://gatsby-starter.mdbootstrap.com',
     author: 'anna-morawska',
-
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -16,21 +15,21 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-strapi",
+      resolve: 'gatsby-source-strapi',
       options: {
         secure: false,
-       apiURL: "https://54.156.73.182",
-       // apiURL: "https://strapy-iowa.herokuapp.com",
+        apiURL: 'https://54.156.73.182',
+        // apiURL: "https://strapy-iowa.herokuapp.com",
         contentTypes: [
-          "Logins",
-          "Visions",
-          "Navbars",
-          "Subnavbars",
-          "Homes",
-          "Members",
-          "Footers",
-          "Boards",
-          "Events",
+          'Logins',
+          'Visions',
+          'Navbars',
+          'Subnavbars',
+          'Homes',
+          'Members',
+          'Footers',
+          'Boards',
+          'Events',
         ],
         queryLimit: 1000,
       },
@@ -52,7 +51,6 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
-     'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
   ],
 }
-
