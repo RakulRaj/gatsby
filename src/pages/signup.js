@@ -39,7 +39,7 @@ const Signup = () => {
         .post('https://54.156.73.182/users', data)
         .then(result => {
           console.log(result)
-          window.location.pathname = '/login'
+          window.location.pathname = 'login'
           /**
            * creates a dynamic page with the data received
            * injects the data into the context object alongside with some options

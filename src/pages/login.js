@@ -35,7 +35,7 @@ const Login = () => {
         .post('https://54.156.73.182/auth/local', data)
         .then(result => {
           const { data } = result
-          window.location.pathname = '/'
+          window.location.pathname = 'home'
           localStorage.token = result.data.jwt
           localStorage.isAuthenticated = true
           console.log({ result })
