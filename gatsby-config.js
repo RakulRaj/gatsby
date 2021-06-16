@@ -2,7 +2,6 @@ module.exports = {
   siteMetadata: {
     title: 'IOWA STATE REGISTRY OF INTERPRETERS FOR THE DEAF',
     description: '',
-    // siteUrl: 'https://gatsby-starter.mdbootstrap.com',
     author: 'anna-morawska',
   },
   plugins: [
