@@ -1,66 +1,74 @@
-.homeContent{
+.homeContent {
   box-shadow: 2px 12px 10px 7px #f1f1f1;
   height: 391px;
 }
 
-.homeContent ul{
-list-style: none;
-text-align: justify
+.homeContent ul {
+  list-style: none;
+  text-align: justify;
 }
 
-.content i{
+.content i {
   font-size: 16px;
   margin-right: 10px;
 }
-.read-more{
+.read-more {
   float: right;
   padding: 9px 12px 8px 10px;
   background: #468202 !important;
 }
-.top-nav li{
+.top-nav li {
   display: inline-block;
   margin-right: 0px;
   padding: 3px;
 }
 
-.top-nav{
+.top-nav {
   padding: 0px;
   margin: 0px;
 }
-.category{
+.category {
   margin-top: 13px;
 }
 
-.ListStyle li{
-  color:gray;
+.ListStyle li {
+  color: gray;
   margin-bottom: 10px;
   text-align: left;
 }
-.ListStyle li i{
+.ListStyle li i {
   margin-right: 10px;
 }
-.img-fluid{
+.img-fluid {
   margin-top: 14px;
   margin-bottom: 14px;
 }
-.team-player{
+.team-player {
   padding: 11px;
 }
 .logo-img {
   height: 143px;
   list-style: 'none';
- float: 'left';
+  float: 'left';
 }
 
 @media only screen and (max-width: 768px) {
-.top-nav{
-  display: inline-flex;
-  width: 100%;
-}
+  .top-nav {
+    display: inline-flex;
+    width: 100%;
+  }
 }
 @media screen and (max-width: 480px) {
   .logo-img {
     width: 230px !important;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+  .close {
+    display: none;
+  }
+  .menu {
+    display: none;
   }
 }
 
@@ -76,7 +84,7 @@ a {
   margin-left: auto;
   margin-right: auto;
   margin-top: 3em;
-  margin-bottom:3em;
+  margin-bottom: 3em;
   border-radius: 10px;
   background-color: #ffff;
   padding: 1.8rem;
@@ -143,8 +151,8 @@ a {
   color: rgb(170 166 166);
 }
 
-input[type="text"],
-input[type="password"] {
+input[type='text'],
+input[type='password'] {
   padding: 15px 20px;
   margin-top: 8px;
   margin-bottom: 15px;

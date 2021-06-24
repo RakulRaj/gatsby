@@ -108,37 +108,34 @@ const SubNavbar = () => {
                 >
                   <span>{document.menu_name}</span>
                 </a>
-
               </Link>
-              {
-                  document.submenu_name[0] &&
+              {document.submenu_name[0] && (
+                <div
+                  className="sub-menu-block"
+                  style={{
+                    backgroundColor: bg_sub_menu.color,
+                  }}
+                >
+                  {document.submenu_name && (
+                    <div className="row">
+                      <div className="col-md-4 col-lg-4 col-sm-4">
+                        <h2 className="sub-menu-head"></h2>
+                        <ul className="sub-menu-lists">
+                          {document.submenu_name.map((menu, index) => (
+                            <li key={index}>
+                              <a
+                                style={{
+                                  color: font_color.color,
+                                }}
+                              >
+                                {menu.menu_name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-              <div
-                className="sub-menu-block"
-                style={{
-                  backgroundColor: bg_sub_menu.color,
-                }}
-              >
-                {document.submenu_name && (
-                  <div className="row">
-                    <div className="col-md-4 col-lg-4 col-sm-4">
-                      <h2 className="sub-menu-head"></h2>
-                      <ul className="sub-menu-lists">
-                        {document.submenu_name.map((menu, index) => (
-                          <li key={index}>
-                            <a
-                              style={{
-                                color: font_color.color,
-                              }}
-                            >
-                              {menu.menu_name}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* <div className="col-md-4 col-lg-4 col-sm-4">
+                      {/* <div className="col-md-4 col-lg-4 col-sm-4">
                       <div className="row banners-area">
                         <div className="col-md-12 col-lg-12 col-sm-12">
                           <img
@@ -149,10 +146,10 @@ const SubNavbar = () => {
                         </div>
                       </div>
                     </div> */}
-                  </div>
-                )}
-              </div>
-}
+                    </div>
+                  )}
+                </div>
+              )}
             </li>
           ))}
         </ul>
