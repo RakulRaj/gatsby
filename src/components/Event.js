@@ -16,7 +16,6 @@ const Event = ({
   title_align,
   content_align,
 }) => {
-  debugger
   return (
     <>
       <div className="col-md-6">

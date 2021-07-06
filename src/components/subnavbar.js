@@ -72,7 +72,7 @@ const SubNavbar = () => {
   const {
     allStrapiSubnavbars: { nodes: subnavbar },
   } = data
-  console.log(data)
+  console.log(subnavbar[0])
   const {
     bg_color,
     font_color,
@@ -98,44 +98,66 @@ const SubNavbar = () => {
         </a>
         <a className="ic close" />
         <ul className="main-nav">
-          {subnavbar.map((document, index1) => (
-            <li className="top-level-link" key={index1}>
-              <Link to={`/${document.menu_url}`}>
-                <a
-                  style={{
-                    color: font_color.color,
-                  }}
-                >
-                  <span>{document.menu_name}</span>
-                </a>
-              </Link>
-              {document.submenu_name[0] && (
-                <div
-                  className="sub-menu-block"
-                  style={{
-                    backgroundColor: bg_sub_menu.color,
-                  }}
-                >
-                  {document.submenu_name && (
-                    <div className="row">
-                      <div className="col-md-4 col-lg-4 col-sm-4">
-                        <h2 className="sub-menu-head"></h2>
+
+
+          {subnavbar.map((document, index1) => {
+
+            const menuName = document.menu_name;
+
+             if (typeof window !== 'undefined') {
+               const storedData = localStorage.token;
+               if (storedData === 'undefined' && menuName === 'Members Only') {
+                 return "";
+               }
+             } 
+
+
+
+
+            return (
+
+
+              <li className="top-level-link" key={index1}>
+                <Link to={`/${document.menu_url}`}>
+                  <a
+                    style={{
+                      color: font_color.color,
+                    }}
+                  >
+                    <span>{menuName}</span>
+                  </a>
+                </Link>
+                {document.submenu_name[0] && (
+                  <div
+                    className="sub-menu-block"
+                    style={{
+                      backgroundColor: bg_sub_menu.color,
+                    }}
+                  >
+                    {document.submenu_name && (
+                      <div>
+
                         <ul className="sub-menu-lists">
                           {document.submenu_name.map((menu, index) => (
                             <li key={index}>
-                              <a
-                                style={{
-                                  color: font_color.color,
-                                }}
-                              >
-                                {menu.menu_name}
-                              </a>
+
+
+                              <Link to={`/${menu.url}`}>
+                                <a
+                                  style={{
+                                    color: font_color.color,
+                                  }}
+                                >
+                                  <span>{menu.menu_name}</span>
+                                </a>
+                              </Link>
+
+                              
                             </li>
                           ))}
                         </ul>
-                      </div>
 
-                      {/* <div className="col-md-4 col-lg-4 col-sm-4">
+                        {/* <div className="col-md-4 col-lg-4 col-sm-4">
                       <div className="row banners-area">
                         <div className="col-md-12 col-lg-12 col-sm-12">
                           <img
@@ -146,12 +168,13 @@ const SubNavbar = () => {
                         </div>
                       </div>
                     </div> */}
-                    </div>
-                  )}
-                </div>
-              )}
-            </li>
-          ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </li>
+            )
+          })}
         </ul>
       </nav>
     </header>

@@ -9,7 +9,6 @@ import Board from "./Board"
 const baseUrl="https://strapy-iowa.herokuapp.com"
 
 export const BoardMembers = ({members,title,showLink})=>{
-  debugger
    return (
    <div className="box center">
            <h2 className="heading">{title}</h2>

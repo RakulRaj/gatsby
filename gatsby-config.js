@@ -1,4 +1,7 @@
 module.exports = {
+
+
+  
   siteMetadata: {
     title: 'IOWA STATE REGISTRY OF INTERPRETERS FOR THE DEAF',
     description: '',
@@ -32,6 +35,7 @@ module.exports = {
         ],
         queryLimit: 1000,
       },
+      
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

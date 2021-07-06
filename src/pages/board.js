@@ -9,15 +9,25 @@ const Board = ({
     allStrapiMembers: { nodes: members },
   },
 }) => {
+
+  
+
   return (
     <Layout>
+
       <SEO title="Board" />
+
       <section className="blog-page">
+        
         <Boards members={members} title="" />
       </section>
     </Layout>
   )
+
+
 }
+
+
 
 export const query = graphql`
 {

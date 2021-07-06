@@ -8,7 +8,6 @@ import Event from './Event'
 import Board from './Board'
 
 export const Events = ({ events, title, showLink }) => {
-  debugger
   return (
     <div className="box center">
       <h2 className="heading">{title}</h2>

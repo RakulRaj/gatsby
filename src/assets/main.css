@@ -177,4 +177,9 @@ input[type='password'] {
   display: block;
 }
 
+.plain-conatiner {
+  height: 350px;
+  
+}
+
 /* end login css */

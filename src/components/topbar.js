@@ -75,6 +75,7 @@ const TopNavbarPage = () => {
                   fontSize: item.font_size.size,
                   fontFamily: item.font_family.family,
                   fontWeight: item.font_weight.weight,
+                  height:'20px',
                 }}
               >
                 {item.login_content}
